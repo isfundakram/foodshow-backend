@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [ "post" ],
+      "route": "checkin"
+    },
+    { "type": "http", "direction": "out", "name": "$return" },
+    {
+      "type": "signalR",
+      "direction": "out",
+      "name": "signalRMessages",
+      "hubName": "booth",
+      "connectionStringSetting": "AzureSignalRConnectionString"
+    }
+  ]
+}
